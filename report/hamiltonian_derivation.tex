@@ -1,0 +1,272 @@
+\subsection*{Spin 1 operators: ($\hbar = 1$)} 
+
+\begin{align}
+S_x &= \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix}, \\
+S_x^2 &= \frac{1}{2}
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 2 & 0 \\
+1 & 0 & 1
+\end{bmatrix}, \\
+S_y &= \frac{1}{\sqrt{2}} 
+\begin{bmatrix}
+0 & -i & 0 \\
+i & 0 & -i \\
+0 & i & 0
+\end{bmatrix}, \\
+S_y^2 &= \frac{1}{2}
+\begin{bmatrix}
+1 & 0 & -1 \\
+0 & 2 & 0 \\
+-1 & 0 & 1
+\end{bmatrix}, \\
+S_z &= 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix}, \\
+S_z^2 &= 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align}
+
+
+
+
+
+\subsection*{Hamiltonian:}
+\begin{align}
+H_{NV} &= \left(D_0 + \epsilon_{\parallel}\sigma_{\parallel}\right)S_z^2 + \gamma_{NV}B_{\parallel}S_z + \gamma_{NV}B_{\perp}S_x ... \nonumber \\
+&\quad + \epsilon_{\perp}\sigma_x(S_x^2 - S_y^2) + \epsilon_{\perp}\sigma_y(S_xS_y + S_yS_x)
+\end{align}
+\par
+\text{List of variables/terms:}
+
+\begin{table}
+    \centering
+    \begin{tabular}{ccc}
+        Variable & Description & Magnitude \\
+       $D_0$  & zero-field splitting term & 2.87~GHz\\
+       $\gamma_{\text{NV}}$ & NV centre gyromagnetic ratio & 2.8~MHz/G\\
+       $\epsilon_{\perp}$   & stress coupling constants & 0.03~MHz/MPa\\
+    \end{tabular}
+\end{table}
+
+$\epsilon_{\parallel} \rightarrow \text{N/A}$
+
+$B_{\parallel} \rightarrow \text{N/A}$
+
+$B_{\perp} \rightarrow \text{N/A}$
+ 
+$\sigma_{\parallel}$
+$\sigma_x$
+$\sigma_y$
+\text{(stress terms)}
+
+\[(\gamma_{NV}B_{\parallel}S_z + \gamma_{NV}B_{\perp}S_x) \rightarrow \text{Zeeman splitting term}
+\]
+
+
+
+
+
+
+
+
+
+\subsection*{Matrix Working} 
+\par 
+Operator Form
+
+
+\begin{align}
+H_{\text{NV}} &= \left(D_0 + \epsilon_{\parallel}\sigma_{\parallel}\right)S_z^2 
++ \gamma_{\text{NV}}B_{\parallel}S_z 
++ \gamma_{\text{NV}}B_{\perp}S_x \nonumber \\
+&\quad + \epsilon_{\perp}\sigma_x(S_x^2 - S_y^2) 
++ \epsilon_{\perp}\sigma_y(S_xS_y + S_yS_x)
+\end{align}
+
+\subsection*{Matrix Representation (Spin-1 basis)}
+\begin{multline*}
+H_{\text{NV}} = \sum_{i} \mathcal{O}_i =
+\underbrace{(D_0 + \epsilon_{\parallel}\sigma_{\parallel})
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix}}_{\text{Zero-field splitting}}
++
+\underbrace{\gamma_{\text{NV}} B_{\parallel}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix}}_{\text{Axial Zeeman}} \\
++
+\underbrace{\frac{\gamma_{\text{NV}} B_{\perp}}{\sqrt{2}}
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix}}_{\text{Transverse Zeeman}}
++
+\underbrace{\epsilon_{\perp}\sigma_x
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & 0
+\end{bmatrix}}_{\text{Strain } \sigma_x}
++
+\underbrace{i\epsilon_{\perp}\sigma_y
+\begin{bmatrix}
+0 & -1 & 0 \\
+1 & 0 & -1 \\
+0 & 1 & 0
+\end{bmatrix}}_{\text{Strain } \sigma_y}
+\end{multline*}
+\subsection*{Explicit 3×3 Matrix}
+
+
+\begin{equation}
+H_{\text{NV}} = 
+\begin{bmatrix}
+D_0 + \epsilon_{\parallel}\sigma_{\parallel} + \gamma_{\text{NV}}B_{\parallel} 
+& \frac{\gamma_{\text{NV}} B_{\perp}}{\sqrt{2}} - i\epsilon_{\perp}\sigma_y 
+& \epsilon_{\perp}\sigma_x \\
+\frac{\gamma_{\text{NV}} B_{\perp}}{\sqrt{2}} + i\epsilon_{\perp}\sigma_y 
+& 0 
+& \frac{\gamma_{\text{NV}} B_{\perp}}{\sqrt{2}} - i\epsilon_{\perp}\sigma_y \\
+\epsilon_{\perp}\sigma_x 
+& \frac{\gamma_{\text{NV}} B_{\perp}}{\sqrt{2}} + i\epsilon_{\perp}\sigma_y 
+& D_0 + \epsilon_{\parallel}\sigma_{\parallel} - \gamma_{\text{NV}}B_{\parallel}
+\end{bmatrix}
+\end{equation}
+\subsection*{Eigenvalue Equation}
+
+
+\begin{equation}
+\det(H_{\text{NV}} - E\parallel{I}) = 0
+\end{equation}
+
+\[
+= \det
+\begin{pmatrix}
+D_0 + \epsilon_{\parallel} \sigma_{\parallel} + \frac{\gamma_{NV} B_\parallel}{\sqrt{2}} - \epsilon & \frac{\gamma_{NV} B_\parallel}{\sqrt{2}} - i (\epsilon_{12} \sigma_{12}) \\
+\frac{\gamma_{NV} B_\parallel}{\sqrt{2}} + i (\epsilon_{12} \sigma_{12}) & D_0 + \epsilon_{\parallel} \sigma_{\parallel} - \frac{\gamma_{NV} B_\parallel}{\sqrt{2}} - \epsilon
+\end{pmatrix} = 0
+\]
+
+\text{Let:}
+\begin{align*}
+a = D_0 + \epsilon_{\parallel}  \sigma_{\parallel} \\
+b = (\frac{\gamma_{NV} B_\bot}{\sqrt{2}} - {i}{\epsilon}_\bot\sigma_y) \\
+b^* = (\frac{\gamma_{NV} B_\bot}{\sqrt{2}} + {i}{\epsilon}_\bot\sigma_y)\\
+c =\epsilon_{\bot} \sigma_x \\
+d = D_0 + \epsilon_{\parallel} \sigma_{\parallel} -\gamma_{NV} B_\parallel
+\end{align*}
+
+\[
+det(H_{NV} - EI) = 
+\begin{pmatrix}
+ a-E& b & c \\
+b* & -E & b \\
+c & b^* & d-E
+\end{pmatrix}
+\]
+
+
+\[
+\det = (a-E)[(-E)(d-E) - bb^*] + b[(b^*)(d-E) - bc] + c[(b^*)(b^*)-(-E)(c)]
+\]
+
+\[
+\det = (a-E)(-Ed+E^2-(b^*)^2) - bb^*d+bb^*E+b^2c+c(b^*)^2+c^2E
+\]\
+
+\text{Considering the system without strain, we set the strain to zero: }$\epsilon_\bot=0$
+\begin{align*}
+b = (\frac{\gamma_{NV} B_\bot}{\sqrt{2}}) \\
+b^* = b\\
+c = 0 \\
+\sigma_y=0
+\end{align*}
+
+\[
+det(H_{NV} - EI) = 
+\begin{pmatrix}
+ a-E& b & 0 \\
+b & -E & b \\
+0 & b & d-E
+\end{pmatrix}
+\]
+
+\text{New determinant of new matrix: }
+\begin{align*}
+det = (a-E)[(-E)(d-E)-b^2]-b[b(d-E)]+0 \\
+= (a-E)[E^2 - Ed -b^2] - b[bd - bE]\\
+= aE^2-aEd-ab^2-E^3+E^2d+Eb^2-b^2d-b^2E \\
+= E^3+(a+d)E^2+(b^2+b^2+ad)E-ab^2-b^2d
+\end{align*}
+
+\text{Now considering only the diagonal terms:}
+\begin{align*}
+a \approx D_0 + \gamma_{NV}B_\parallel \\
+d \approx D_0 - \gamma_{NV}B_\parallel  \\
+\end{align*}
+
+\text{Substitute into $(a-E)(d-E)(-E)$:}
+\begin{align*}
+(D_0 - \gamma_{NV}B_\parallel-E)(D_0 - \gamma_{NV}B_\parallel)(-E) \\
+\end{align*}
+
+\text{Let $x = E$:}
+\begin{align*}
+det(H_{NV} - EI) = -(D_0 +\gamma_{NV}B_\parallel -x)(D_0 - \gamma_{NV}B_\parallel - x)(x)  \\
+det = -x[(D_0 - x)^2 - (\gamma_{NV}B_\parallel)^2]\\
+= -x [D_0^2 -x^2 -2D_0x - (\gamma_{NV}B_\parallel)^2]\\
+= -x^3 +2D_0x^2-D_0^2x-\gamma_{NV}^2B_\parallel^2x\\
+= -x^3 + 2D_0x^2 - x(D_0 -\gamma_{NV}B_\parallel)^2
+\end{align*}
+
+\text{Substitute $x=E$}
+\begin{align*}
+-E^3 + 2D_0E^2 - E(D_0 -\gamma_{NV}B_\parallel)^2 = 0
+\end{align*}
+
+\text{Therefore, the unperturbed spectrum, where $\epsilon_\bot = 0$ is:}
+\begin{align*}
+-E^3 + 2D_0E^2 - E(D_0 -\gamma_{NV}B_\parallel)^2 = 0\\
+E(E^2 - 2D_0E + D_0^2-\gamma_{NV}^2B_\bot^2) = 0\\
+\end{align*}
+
+\text{Using the quadratic equation:}\\
+\begin{align*}
+E = \frac{2D_0 \pm\sqrt{(2D_0)^2-4(D_0^2-\gamma_{NV}^2B_\parallel^2)}}{2}\\
+E = D_0 \pm \gamma_{NV}B_\parallel
+\end{align*}
+
+\text{The Eigenvalues are:}
+\begin{align*}
+E_1 = 0 \\
+E_2 = D_0 + \gamma_{NV}B_\parallel\\
+E_3 = D_0 - \gamma_{NV}B_\parallel
+\end{align*}
+
+\text{Substituting the values for the zero-field splitting term and gyromagnetic ratio:}
+\begin{align*}
+E_1 = 0 \\
+E_2 = (2.87)GHz + (2.8) MHz/G *B_\parallel\\
+E_3 = (2.87)GHz - (2.8) MHz/G *B_\parallel
+\end{align*}
+
+Without perturbations, the eigenvalues $E_2$ and $E_3$ are functions of $B_\parallel$. 

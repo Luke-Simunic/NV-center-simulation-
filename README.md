@@ -1,15 +1,20 @@
 # Phonon-Driven Spin Dynamics in Nitrogen-Vacancy Centres
 
+> Undergraduate research project investigating RF-free quantum control of nitrogen-vacancy (NV) centres through time-dependent lattice strain.
+
+
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)]()
 [![Research](https://img.shields.io/badge/Research-Quantum%20Sensing-green.svg)]()
 
 ## Overview
 
-This repository contains my undergraduate research project investigating the feasibility of **phonon-driven spin transitions in nitrogen-vacancy (NV) centres in diamond**.
+Nitrogen-vacancy (NV) centres in diamond are among the most promising solid-state quantum systems for applications in quantum sensing, precision magnetometry and quantum information processing.
 
-The project explores whether time-dependent strain can coherently manipulate NV spin states as a potential alternative to conventional radio-frequency (RF) excitation. Such an approach could contribute towards RF-free quantum magnetometry, particularly for environments where microwave delivery is impractical.
+Conventional optically detected magnetic resonance (ODMR) relies on microwave excitation to manipulate spin states. This project investigates an alternative approach by numerically modelling whether **time-dependent lattice strain (phonons)** can coherently drive spin transitions without requiring radio-frequency fields.
 
-The repository contains the complete Python simulation, research report, derivation of the Hamiltonian, conference poster, and figures generated throughout the project.
+To investigate this, a complete spin-1 Hamiltonian was implemented in Python and extended to include magnetic, hyperfine and strain interactions. Numerical simulations were then performed to analyse energy level evolution, anti-crossings and coherent population dynamics under oscillating strain fields.
+
+This repository contains the complete simulation framework together with the accompanying dissertation, Hamiltonian derivation, research poster and generated figures.
 
 ---
 
@@ -23,21 +28,35 @@ The simulation models the quantum dynamics of the NV centre under magnetic field
 
 ---
 
-## Features
+## Key Results
+The numerical simulations demonstrated that oscillating strain modifies the NV centre energy spectrum and induces coherent population dynamics between spin states.
 
-The simulation includes
+Key outputs include:
 
-- Construction of the complete spin-1 Hamiltonian
-- Zero-field splitting
-- Zeeman interaction
-- Hyperfine interaction
-- Static and time-varying strain terms
-- Numerical diagonalisation of the Hamiltonian
-- Energy level calculations
-- Anti-crossing identification
+- Magnetic-field-dependent energy level diagrams
+- Time-varying strain simulations
+- Anti-crossing detection algorithms
+- Quantum state population evolution
+- Visualisation of strain-induced spin dynamics
+
+These results provide a computational framework for investigating phonon-assisted quantum control in NV centres and establish a foundation for future experimental validation.
+
+---
+
+## Simulation Capabilities
+
+The simulation framework includes:
+
+- Construction of the complete spin-1 NV centre Hamiltonian
+- Zero-field splitting and Zeeman interactions
+- Hyperfine coupling terms
+- Static and time-dependent strain perturbations
+- Numerical Hamiltonian diagonalisation
+- Energy level evolution as a function of magnetic field
+- Automatic anti-crossing identification
 - Time-dependent Schrödinger equation solver
-- Population evolution under oscillating strain
-- Automatic generation of publication-quality figures
+- Population dynamics simulations
+- Publication-quality scientific visualisations
 
 ---
 ## Quick Start
@@ -68,9 +87,9 @@ src/
     simulation.py
 
 plots/
-    Energy_Level_Splitting.png
+    energy_levels.jpg
     ...
-    Population_Dynamics.png
+    population_dynanics_under_resonant_conditions.png
 
 report/
     NV_Center_Research_Report.pdf
@@ -84,19 +103,19 @@ report/
 
 ### Energy Level Splitting
 
-![Energy Levels](plots/energy_level_splitting.png)
+![Energy Levels](plots/strain_induced_splitting_of_energy_levels.jpg)
 
 ---
 
 ### Time-Varying Strain Simulation
 
-![Population Dynamics](plots/population_dynamics.png)
+![Population Dynamics](plots/population_dynanics_under_resonant_conditions.png)
 
 ---
 
 ### Anti-Crossing Behaviour
 
-![Anti Crossing](plots/anti_crossing.png)
+![Anti Crossing](plots/energy_levels.jpg)
 
 ---
 
@@ -132,7 +151,7 @@ Major components include
 
 This repository includes
 
-- Undergraduate research dissertation
+- Undergraduate research
 - Complete simulation code
 - Hamiltonian derivation
 - Faculty research poster
@@ -144,6 +163,7 @@ This repository includes
 
 Potential extensions include
 
+- Introducing the rotating wave approximation to remove noise
 - Full Lindblad master equation simulations
 - Decoherence modelling
 - Optical pumping dynamics
